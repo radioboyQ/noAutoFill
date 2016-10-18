@@ -1,0 +1,21 @@
+{
+  "name": "No Autofill",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "No Autofill.",  
+  "content_scripts": [ {
+      "all_frames": true,
+      "exclude_globs": [  ],
+      "include_globs": [ "*" ],  
+      "js": [ "script.js" ],      
+      "matches": [   
+                   "http://127.0.0.1/",
+                   "http://localhost/",
+                   "http://127.0.0.1/*",
+                   "http://localhost/*",
+		   "http://localhost/doku.php*"
+                    ],
+      "run_at": "document_start"
+   } ],
+  "permissions": [ "tabs", "http://*/", "https://*/", "https://*/*", "http://*/*", "contextMenus" ]
+}
